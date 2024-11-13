@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Головна сторінка</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1 class="blog-title">Мій блог</h1>
+        <nav class="nav-menu">
+            {% if 'username' in session %}
+                <a href="{{ url_for('logout') }}">Вийти</a>
+                <a href="{{ url_for('new_post') }}">Новий пост</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Увійти</a>
+                <a href="{{ url_for('register') }}">Зареєструватися</a>
+            {% endif %}
+        </nav>
+    </header>
+    <form action="{{ url_for('search') }}" method="GET" class="search-form">
+        <label for="category">Пошук за категорією:</label>
+        <input type="text" name="category" id="category" required>
+        <button type="submit" class="submit-button">Пошук</button>
+    </form>    
+    <main>
+        <h2>Останні пости:</h2>
+        <div class="post-list">
+            {% for post in posts %}
+                <div class="post-card">
+                    <h3 class="post-title"><a href="{{ url_for('post_page', post_id=post[0]) }}">{{ post[1] }}</a></h3>
+                    <p class="post-excerpt">{{ post[2][:100] }}...</p>
+                    <a class="read-more" href="{{ url_for('post_page', post_id=post[0]) }}">Читати далі</a>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2024 Блог</p>
+    </footer>
+</body>
+</html>

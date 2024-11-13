@@ -1,0 +1,233 @@
+
+body {
+    font-family: 'Georgia', serif; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+    background-color: #f9f9f9; 
+}
+
+
+header {
+    background-color: #6b4f4f; 
+    color: white; 
+    text-align: center; 
+    padding: 20px 0;
+}
+
+
+.blog-title {
+    margin: 0; 
+}
+
+
+.nav-menu {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10px; 
+}
+
+.nav-menu a {
+    color: white; 
+    text-decoration: none; 
+    margin: 0 15px; 
+    padding: 10px 15px; 
+    border: 1px solid white; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+
+main {
+    flex: 1; 
+    padding: 20px; 
+}
+
+
+.post-container {
+    background-color: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    width: 90%; 
+    max-width: 800px; 
+    margin: 20px auto; 
+}
+
+
+.post-title {
+    font-size: 2em;
+    margin-bottom: 10px; 
+    color: #6b4f4f; 
+}
+
+
+.post-content {
+    line-height: 1.6; 
+}
+
+
+.post-category {
+    font-size: 0.9em; 
+    color: #777; 
+    margin-bottom: 15px; 
+}
+
+.post-image {
+    width: 100%; 
+    border-radius: 8px; 
+    margin-top: 15px; 
+}
+
+
+.post-actions {
+    margin-top: 20px; 
+}
+
+
+.submit-button {
+    display: inline-block;
+    background-color: #6b4f4f;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; 
+    border-radius: 5px;
+    transition: background-color 0.3s; 
+    margin-right: 10px; 
+}
+
+
+.submit-button:hover {
+    background-color: #5b3f3f; 
+}
+
+
+.comments-section {
+    margin-top: 20px; 
+}
+
+
+.comment {
+    margin: 5px 0;
+    padding: 10px; 
+    background-color: #f0f0f0; 
+    border-radius: 5px; 
+}
+
+
+.comment-form {
+    margin-top: 20px; 
+}
+
+
+footer {
+    text-align: center; 
+    background-color: #6b4f4f; 
+    color: white; 
+    padding: 10px 0; 
+    position: relative; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+
+.edit-post, .new-post, .login, .register {
+    padding: 20px; 
+    margin: 0 auto; 
+}
+
+
+.edit-post .container {
+    max-width: 600px; 
+}
+
+
+.new-post .container {
+    max-width: 600px; 
+}
+
+
+.login .container {
+    max-width: 400px; 
+}
+
+
+.register .container {
+    max-width: 400px;
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Відстань між картками */
+}
+
+.post-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.post-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Анімація при наведенні */
+}
+
+.post-title {
+    font-size: 1.5em;
+    color: #6b4f4f;
+    margin: 0 0 10px; /* Відступи */
+}
+
+.post-excerpt {
+    font-size: 1em;
+    color: #555;
+    margin: 0 0 10px; /* Відступи */
+}
+
+.read-more {
+    display: inline-block;
+    background-color: #6b4f4f;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.read-more:hover {
+    background-color: #5b3f3f; /* Темніший відтінок при наведенні */
+}
+
+.search-form {
+    margin-top: 20px;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-form .submit-button {
+    background-color: #6b4f4f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form .submit-button:hover {
+    background-color: #5b3f3f;
+}
+

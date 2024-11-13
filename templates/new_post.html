@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Новий пост</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="new-post">
+    <header>
+        <h1 class="blog-title">Мій блог</h1>
+        <nav class="nav-menu">
+            {% if 'username' in session %}
+                <a href="{{ url_for('logout') }}">Вийти</a>
+                <a href="{{ url_for('new_post') }}">Новий пост</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Увійти</a>
+                <a href="{{ url_for('register') }}">Зареєструватися</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Новий пост</h1>
+            <form method="POST" enctype="multipart/form-data">
+                <label for="title">Назва:</label>
+                <input type="text" name="title" id="title" value="{{ post[1] if post else '' }}" required pattern="^[a-zA-Zа-яА-Я0-9\s]{1,100}$" title="Назва посту повинна містити лише літери (латинські або українські), цифри та пробіли, максимум 100 символів."><br>
+                <br>
+                <label for="content">Текст:</label>
+                <textarea name="content" id="content" required></textarea><br>
+                <br>
+                <label for="category">Категорія:</label>
+                <input type="text" name="category" id="category" required><br>
+                <br>
+                <label for="media">Медіа:</label>
+                <input type="file" name="media" id="media"><br>
+                <br>
+                <button type="submit" class="submit-button">Опублікувати</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Блог</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Результати пошуку для категорії {{ category }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1 class="blog-title">Мій блог</h1>
+        <nav class="nav-menu">
+            {% if 'username' in session %}
+                <a href="{{ url_for('logout') }}">Вийти</a>
+                <a href="{{ url_for('new_post') }}">Новий пост</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Увійти</a>
+                <a href="{{ url_for('register') }}">Зареєструватися</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Результати пошуку для категорії "{{ category }}"</h1>
+            {% if posts %}
+                <ul class="post-list">
+                    {% for post in posts %}
+                        <li>
+                            <a href="{{ url_for('post_page', post_id=post[0]) }}">{{ post[1] }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Немає постів в цій категорії.</p>
+            {% endif %}
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Блог</p>
+    </footer>
+</body>
+</html>

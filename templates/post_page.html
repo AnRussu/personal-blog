@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post[1] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="post-page">
+    <header>
+        <h1 class="blog-title">Мій блог</h1>
+        <nav class="nav-menu">
+            {% if 'username' in session %}
+                <a href="{{ url_for('logout') }}">Вийти</a>
+                <a href="{{ url_for('new_post') }}">Новий пост</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Увійти</a>
+                <a href="{{ url_for('register') }}">Зареєструватися</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        <div class="post-container">
+            <h2 class="post-title">{{ post[1] }}</h2>
+            <p class="post-content">{{ post[2] }}</p>
+            <p class="post-category">Категорія: {{ post[3] }}</p>
+
+            {% if post[5] %}
+                <img src="{{ url_for('static', filename='uploads/' + post[5]) }}" alt="Media" class="post-image">
+            {% endif %}
+
+            {% if session['user_id'] == post[4] %}
+                <div class="post-actions">
+                    <a href="{{ url_for('edit_post', post_id=post[0]) }}" class="submit-button">Редагувати</a>
+                    <form method="POST" action="{{ url_for('delete_post', post_id=post[0]) }}" class="delete-form">
+                        <br>
+                        <button type="submit" class="submit-button">Видалити</button>
+                    </form>
+                </div>
+            {% endif %}
+
+            <h2>Коментарі:</h2>
+            <form method="POST" class="comment-form">
+                <textarea name="comment" required></textarea><br>
+                <button type="submit" class="submit-button">Додати коментар</button>
+            </form>
+
+            <div class="comments-section">
+                {% for comment in comments %}
+                    <p class="comment">{{ comment[2] }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Мій блог</p>
+    </footer>
+</body>
+</html>
+
+
+

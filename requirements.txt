@@ -7,67 +7,15 @@ bottle-websocket==0.2.9
 certifi==2024.2.2
 cffi==1.16.0
 chardet==5.2.0
-charset-normalizer==3.3.2
-click==8.1.7
-colorama==0.4.6
-contourpy==1.2.1
-cycler==0.12.1
-docutils==0.20.1
-Eel==0.16.0
-Flask==3.0.3
-Flask-JWT-Extended==4.6.0
-Flask-Login==0.6.3
-Flask-Mail==0.10.0
-Flask-Migrate==4.0.7
-Flask-SQLAlchemy==3.1.1
-Flask-WTF==1.2.2
-fonttools==4.51.0
-fpdf==1.7.2
-future==0.18.3
-gevent==23.9.1
-gevent-websocket==0.10.1
-greenlet==3.0.1
-idna==3.6
-itsdangerous==2.2.0
-Jinja2==3.1.4
-joblib==1.4.2
-Mako==1.3.6
-MarkupSafe==2.1.5
-matplotlib==3.8.4
-numpy==1.26.2
-packaging==23.2
-Panda3D==1.10.14
-pandas==2.2.1
-pefile==2023.2.7
-Pillow==10.0.0
-pycparser==2.21
-pygame==2.5.1
-Pygments==2.17.2
-pyinstaller==6.1.0
-pyinstaller-hooks-contrib==2023.10
-PyJWT==2.9.0
-pyparsing==3.1.1
-pypiwin32==223
-PyQt5==5.15.9
-PyQt5-Qt5==5.15.2
-PyQt5-sip==12.12.2
-python-dateutil==2.9.0.post0
-pytz==2024.1
-pywin32==306
-pywin32-ctypes==0.2.2
-reportlab==4.2.5
-requests==2.31.0
-scikit-learn==1.4.2
-scipy==1.13.0
-seaborn==0.13.2
-six==1.16.0
-SQLAlchemy==2.0.35
-threadpoolctl==3.5.0
-typing_extensions==4.12.2
-tzdata==2024.1
-urllib3==2.2.0
-Werkzeug==3.0.4
-whichcraft==0.6.1
-WTForms==3.2.1
-zope.event==5.0
-zope.interface==6.1
+Flask==2.3.2  # Основний веб-фреймворк для побудови сайту
+Jinja2==3.1.2  # Шаблони для відображення HTML-сторінок
+Werkzeug==2.3.2  # Інструменти для обробки запитів та сесій
+itsdangerous==2.1.2  # Для захисту секретних ключів у Flask
+click==8.1.3  # Для консольних команд у Flask
+
+# Додаткові бібліотеки
+hashlib  # Модуль для хешування паролів (вбудований, не потребує встановлення)
+sqlite3  # База даних SQLite (вбудована, не потребує встановлення)
+
+# Для роботи з медіафайлами
+Pillow==9.3.0  # Обробка зображень, якщо плануєте додавати їх обробку

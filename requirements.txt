@@ -13,3 +13,4 @@ Werkzeug>=2.3.3  # Updated to resolve the conflict
 itsdangerous==2.1.2
 click==8.1.3
 SQLAlchemy>=1.3.0  # Ensuring SQLAlchemy is included for alembic
+gunicorn
